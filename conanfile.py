@@ -1,4 +1,6 @@
 from conans import ConanFile, CMake, tools
+import glob
+import os
 
 class LlvmConan(ConanFile):
     name = "LLVM"
@@ -20,7 +22,8 @@ class LlvmConan(ConanFile):
         cmake.install()
 
     def package(self):
-        pass
+        self.copy("*", src="package")
 
     def package_info(self):
-        pass
+        self.cpp_info.libs = [os.path.basename(a) for a in glob.glob(os.path.join(self.package_folder, "lib", "*.a"))]
+
