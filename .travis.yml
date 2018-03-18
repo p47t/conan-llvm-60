@@ -1,0 +1,11 @@
+language: cpp
+
+install:
+  # Install conan
+  - sudo pip install conan
+  # Automatic detection of your arch, compiler, etc.
+  - conan user
+
+script:
+  # Download dependencies, build, test and create package
+  - conan create . LLVM/release_50

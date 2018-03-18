@@ -14,11 +14,11 @@ class LlvmConan(ConanFile):
     generators = "cmake"
 
     def source(self):
-        self.run("git clone https://github.com/llvm-mirror/llvm -b %s --depth 1" % self.version)
+        self.run("git clone https://github.com/llvm-mirror/llvm -b %s --depth 1 src" % self.version)
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure()
+        cmake.configure(source_folder="src")
         cmake.install()
 
     def package(self):
