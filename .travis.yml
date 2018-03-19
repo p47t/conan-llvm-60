@@ -8,4 +8,4 @@ install:
 
 script:
   # Download dependencies, build, test and create package
-  - conan create . LLVM/release_50
+  - conan create . LLVM/release_60
