@@ -3,11 +3,7 @@ A sample project to demonstrate how to create Conan package for LLVM 5.0.
 # Build LLVM into local cache
 
 ```
-$ conon source .
-$ conan install . -if install
-$ conan build . -sf llvm -bf build -if install
-$ conan package . -sf llvm -bf build -if install
-$ conan export-pkg . LLVM/release_50
+$ conon create . LLVM/release_50
 ```
 
 # Use LLVM in local cache

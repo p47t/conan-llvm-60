@@ -1,16 +1,14 @@
-from conans import ConanFile, CMake, tools
+from conans import ConanFile, CMake
 import glob
 import os
 
 class LlvmConan(ConanFile):
     name = "LLVM"
     version = "release_50"
-    license = "<Put the package license here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Llvm here>"
+    license = "LLVM Release License"
+    url = "https://github.com/p47r1ck7541/llvm-50"
+    description = "%s %s" % (name, version)
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
     generators = "cmake"
 
     def source(self):
@@ -22,8 +20,11 @@ class LlvmConan(ConanFile):
         cmake.install()
 
     def package(self):
-        self.copy("*", src="package")
+        # nothing to do here now because we reuse 'cmake install' to package files
+        pass
 
     def package_info(self):
         self.cpp_info.libs = [os.path.basename(a) for a in glob.glob(os.path.join(self.package_folder, "lib", "*.a"))]
+        self.cpp_info.cppflags = ["-std=c++11", "-fno-rtti"]
+        self.cpp_info.exelinkflags = ["-lcurses", "-lz"]
 
