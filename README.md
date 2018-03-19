@@ -1,9 +1,9 @@
-A sample project to demonstrate how to create Conan package for LLVM 5.0.
+A sample project to demonstrate how to create Conan package for LLVM 6.0.
 
 # Build LLVM into local cache
 
 ```
-$ conon create . LLVM/release_50
+$ conon create . LLVM/release_60
 ```
 
 # Use LLVM in local cache
@@ -12,7 +12,7 @@ Create a file named `conanfile.txt` in your project folder:
 
 ```
 [requires]
-LLVM/release_50@LLVM/release_50
+LLVM/release_60@LLVM/release_60
 
 [generators]
 cmake

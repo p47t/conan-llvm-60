@@ -4,9 +4,9 @@ import os
 
 class LlvmConan(ConanFile):
     name = "LLVM"
-    version = "release_50"
+    version = "release_60"
     license = "LLVM Release License"
-    url = "https://github.com/p47r1ck7541/llvm-50"
+    url = "https://github.com/p47r1ck7541/llvm-60"
     description = "%s %s" % (name, version)
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
