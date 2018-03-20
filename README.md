@@ -6,6 +6,10 @@ A sample project to demonstrate how to create Conan package for LLVM 6.0.
 $ conon create . LLVM/release_60
 ```
 
+See it in action:
+
+[![asciicast](https://asciinema.org/a/9yi010lhV4Bvjk321P8h151aB.png)](https://asciinema.org/a/9yi010lhV4Bvjk321P8h151aB)
+
 # Use LLVM in local cache
 
 Create a file named `conanfile.txt` in your project folder:
